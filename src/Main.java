@@ -1,15 +1,19 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Estoque e1 = new Estoque();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Medicamento m1 = new Medicamento("Lorazepam",75.99,true,5);
+        Medicamento m2 = new Medicamento("Clonazepam",20.99,false,2);
+
+        e1.adicionarMedicamento(m1);
+        e1.adicionarMedicamento(m2);
+
+        ArrayList<Medicamento> medicamentosBaratosSemReceita = e1.medicamentosBaratosSemReceita();
+
+        for (int i = 0;i<=medicamentosBaratosSemReceita.size()-1;i++){
+            System.out.println(medicamentosBaratosSemReceita.get(i));
         }
     }
 }
